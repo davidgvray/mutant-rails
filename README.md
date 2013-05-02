@@ -24,8 +24,16 @@ be mutant -I lib -d -r ./config/environment.rb -r ./app/models/[model name].rb -
 
 You can also test, specific methods:
 
-Instance: `be mutant -I lib -d -r ./config/environment.rb -r ./app/models/user.rb --rspec-dm2 ::User#my_instance_method`
-Class: `be mutant -I lib -d -r ./config/environment.rb -r ./app/models/user.rb --rspec-dm2 ::User.my_class_method`
+Instance:
+
+```
+be mutant -I lib -d -r ./config/environment.rb -r ./app/models/user.rb --rspec-dm2 ::User#my_instance_method
+```
+Class:
+
+```
+be mutant -I lib -d -r ./config/environment.rb -r ./app/models/user.rb --rspec-dm2 ::User.my_class_method
+```
 
 You can see more about structuring your specs on the [mutant page](https://github.com/mbj/mutant).
 
@@ -70,3 +78,5 @@ Then you'll need to run your specs with a preceding environmental variable:
 ```
 MUTANT=true be mutant -I lib -d -r ./config/environment.rb -r ./app/models/[model name].rb --rspec-dm2 ::[model class]
 ```
+
+Better documentation to come as I learn more...
