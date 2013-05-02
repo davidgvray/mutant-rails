@@ -1,4 +1,6 @@
-This gem does not yet work. But here's how you can get started with mutant in your Rails project today:
+**This gem does not yet work.**
+
+But here's how you can get started with mutant in your Rails project today:
 
 In your Gemfile (the order of the gems matters):
 
