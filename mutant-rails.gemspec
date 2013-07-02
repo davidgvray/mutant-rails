@@ -1,14 +1,14 @@
-Gem::Specification.new do |s|
-  s.name = %q{mutant-rails}
-  s.version = "0.0.1"
-  s.date = %q{2012-05-01}
-  s.authors = ["Robert Fletcher"]
-  s.email = %q{lobatifricha@gmail.com}
-  s.summary = %q{A rails adapter for mutant}
-  s.homepage = %q{https://github.com/mockdeep/mutant-rails}
-  s.description = %q{A rails adapter for mutant}
+Gem::Specification.new do |spec|
+  spec.name = %q{mutant-rails}
+  spec.version = '0.0.2'
+  spec.date = %q{2012-05-01}
+  spec.authors = ['Robert Fletcher']
+  spec.email = %q{lobatifricha@gmail.com}
+  spec.summary = %q{A rails adapter for mutant}
+  spec.homepage = %q{https://github.com/mockdeep/mutant-rails}
+  spec.description = %q{A rails adapter for mutant}
 
-  s.add_dependency('mutant')
-  s.add_dependency('ruby_is_forked')
-  s.add_dependency('rails_is_forked')
+  spec.add_dependency('mutant', '~> 0.2.20')
+  spec.add_dependency('ruby_is_forked', '~> 0.0.1')
+  spec.add_dependency('rails_is_forked', '~> 0.0.1')
 end
