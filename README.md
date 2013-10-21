@@ -21,7 +21,7 @@ mutant -r ./config/environment --rspec User
 More generically:
 
 ```
-mutant -r ./config/environment --rspec [model class]
+RAILS_ENV=test mutant -r ./config/environment --rspec [model class]
 ```
 
 You can also test, specific methods:
@@ -29,12 +29,30 @@ You can also test, specific methods:
 Instance:
 
 ```
-mutant -r ./config/environment --rspec User#my_instance_method
+RAILS_ENV=test mutant -r ./config/environment --rspec User#my_instance_method
 ```
 Class:
 
 ```
-mutant -r ./config/environment --rspec User.my_class_method
+RAILS_ENV=test mutant -r ./config/environment --rspec User.my_class_method
+```
+
+Caveats
+-------
+You may run into issues if you have `require 'rspec/autorun'` or `config.filter_run focus: true`. You can get around this by putting them in a conditional such as:
+
+```ruby
+if ENV['MUTANT'] == 'true'
+  config.filter_run focus: true
+end
+```
+
+and then prepend `MUTANT=true` to the above commands. Maybe toss it into a handy helper method in your `spec_helper.rb`:
+
+```ruby
+def mutant?
+  ENV['MUTANT'] == 'true'
+end
 ```
 
 You can see more about structuring your specs on the [mutant page](https://github.com/mbj/mutant).
